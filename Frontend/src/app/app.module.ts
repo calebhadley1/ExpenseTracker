@@ -11,17 +11,19 @@ import { HeaderComponent } from './components/header/header.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input'
-import { ExpenseTableComponent } from './components/expense-table/expense-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddExpenseFormComponent } from './components/add-expense-form/add-expense-form.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { ExpenseItemComponent } from './components/expense-item/expense-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ExpenseTableComponent,
     AddExpenseFormComponent,
+    ExpensesComponent,
+    ExpenseItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import { AddExpenseFormComponent } from './components/add-expense-form/add-expen
     HttpClientModule,
     FontAwesomeModule
   ],
-  providers: [ExpenseTableComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

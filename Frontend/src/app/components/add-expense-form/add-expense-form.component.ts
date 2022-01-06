@@ -2,7 +2,6 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Expense } from 'src/app/Expense';
 import { ExpenseService } from 'src/app/services/expense.service';
-import { ExpenseTableComponent } from 'src/app/components/expense-table/expense-table.component';
 
 
 @Component({
@@ -12,8 +11,9 @@ import { ExpenseTableComponent } from 'src/app/components/expense-table/expense-
 })
 export class AddExpenseFormComponent implements OnInit {
   addExpenseForm!: FormGroup;
+  @Output() onAddExpense: EventEmitter<Expense> = new EventEmitter();
 
-  constructor(private formBuilder: FormBuilder, private expenseTable: ExpenseTableComponent) { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.addExpenseForm = this.formBuilder.group({
@@ -23,17 +23,15 @@ export class AddExpenseFormComponent implements OnInit {
     });
   }
 
-  addExpense() {
+  onSubmit() {
     if (this.addExpenseForm.valid) {
       const newExpense: Expense = {
-        id: 999,
         expense: this.addExpenseForm.value.expense,
         category: this.addExpenseForm.value.category,
         price: this.addExpenseForm.value.price
       };
-
-      this.expenseTable.onAddExpense(newExpense);
-      console.log("sucess")
+      this.onAddExpense.emit(newExpense);
+      this.addExpenseForm.reset()
       return;
     }
   }

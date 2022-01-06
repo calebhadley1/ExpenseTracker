@@ -1,5 +1,5 @@
 <div>
-    <form [formGroup]="addExpenseForm" (submit)="addExpense()">
+    <form [formGroup]="addExpenseForm" (submit)="onSubmit()">
         <mat-form-field appearance="fill">
             <mat-label>Expense</mat-label>
             <input matInput formControlName="expense"/>
