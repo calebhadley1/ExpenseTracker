@@ -23,12 +23,6 @@
       "expense": "Dunkin",
       "category": "Food/Drink",
       "price": 5
-    },
-    {
-      "expense": "new",
-      "category": "yes",
-      "price": "0",
-      "id": 5
     }
   ]
 }

@@ -15,7 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddExpenseFormComponent } from './components/add-expense-form/add-expense-form.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
-import { ExpenseItemComponent } from './components/expense-item/expense-item.component';
+import { ExpenseTableComponent } from './components/expense-table/expense-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { ExpenseItemComponent } from './components/expense-item/expense-item.com
     HeaderComponent,
     AddExpenseFormComponent,
     ExpensesComponent,
-    ExpenseItemComponent,
+    ExpenseTableComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,2 +1,2 @@
-<app-expense-item *ngFor="let expense of expenses" [expense]="expense" (onDeleteExpense)="deleteExpense(expense)"></app-expense-item>
+<app-expense-table [expenses]="expenses" (onDeleteExpense)="deleteExpense($event)"></app-expense-table>
 <app-add-expense-form (onAddExpense)="addExpense($event)"></app-add-expense-form>
