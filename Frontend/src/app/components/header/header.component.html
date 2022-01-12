@@ -1,1 +1,16 @@
-<h1>{{title}}</h1>
+<mat-toolbar class="componentSpacing" color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Manage Expenses</span>
+        </button>
+        <button mat-menu-item routerLink="/graphs">
+          <mat-icon>dashboard</mat-icon>
+          <span>Graphs</span>
+        </button>
+    </mat-menu>
+    <span>{{title}}</span>
+</mat-toolbar>

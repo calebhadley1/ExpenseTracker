@@ -14,7 +14,7 @@ export class ExpensesComponent implements OnInit {
   constructor(private expenseService: ExpenseService) { }
 
   ngOnInit(): void {
-    this.expenseService.getExpenses().subscribe((expenses) => this.expenses=expenses)
+    this.expenseService.getExpenses().subscribe((expenses) => this.expenses=expenses);
   }
 
   deleteExpense(expense: Expense){
@@ -23,6 +23,7 @@ export class ExpensesComponent implements OnInit {
 
   addExpense(expense: Expense){
     this.expenseService.addExpense(expense).subscribe((expense) => (this.expenses.push(expense)));
+    this.expenseService.getExpenses().subscribe((expenses) => this.expenses=expenses);
   }
 
 }

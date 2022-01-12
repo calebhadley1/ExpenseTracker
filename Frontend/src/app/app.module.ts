@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddExpenseFormComponent } from './components/add-expense-form/add-expense-form.component';
 import { ExpensesComponent } from './components/expenses/expenses.component';
 import { ExpenseTableComponent } from './components/expense-table/expense-table.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import { GraphsComponent } from './components/graphs/graphs.component';
+
+const appRoutes: Routes = [
+  {
+    path: '', component: ExpensesComponent
+  },
+  {
+    path: 'graphs', component: GraphsComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -24,6 +38,7 @@ import { ExpenseTableComponent } from './components/expense-table/expense-table.
     AddExpenseFormComponent,
     ExpensesComponent,
     ExpenseTableComponent,
+    GraphsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +49,13 @@ import { ExpenseTableComponent } from './components/expense-table/expense-table.
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]

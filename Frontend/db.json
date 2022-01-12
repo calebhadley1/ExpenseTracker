@@ -23,6 +23,12 @@
       "expense": "Dunkin",
       "category": "Food/Drink",
       "price": 5
+    },
+    {
+      "expense": "test",
+      "category": "test",
+      "price": "2",
+      "id": 5
     }
   ]
 }

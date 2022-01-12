@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Expense } from 'src/app/Expense';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -17,10 +17,6 @@ export class ExpenseTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
   }
 
   onDelete(expense: Expense){
